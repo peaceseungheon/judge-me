@@ -4,7 +4,7 @@
 
 ## 1. 프로젝트 개요
 
-이 저장소는 언어와 프레임워크 같은 스택이 아직 확정되지 않은 상태다. 코드 작업을 시작하기 전에 반드시 스택 현황([스택 지침](docs/guidelines/stack/README.md))을 확인한다. 지침 문서 체계는 이 저장소에서 일하는 에이전트와 사람이 공동으로 준수하는 기준이다.
+이 저장소의 스택은 TypeScript (Nuxt.js)로 확정되었다(`docs/PRD.md` §1, [TypeScript 스택 지침](docs/guidelines/stack/typescript.md)). 코드 작업을 시작하기 전에 반드시 스택 지침을 확인한다. 지침 문서 체계는 이 저장소에서 일하는 에이전트와 사람이 공동으로 준수하는 기준이다.
 
 ## 2. 지침 맵
 
@@ -17,6 +17,7 @@
 | [Git 워크플로우](docs/guidelines/version-control/git-workflow.md) | 브랜치, PR 작업 전 |
 | [커밋 컨벤션](docs/guidelines/version-control/commit-conventions.md) | 커밋 작성 전 |
 | [스택 지침](docs/guidelines/stack/README.md) | 특정 언어, 프레임워크 작업 시작 전, 반드시 여기부터 |
+| [TypeScript 스택 지침](docs/guidelines/stack/typescript.md) | Nuxt.js/TypeScript 코드 작업 전 (버전, 구조, 네이밍, 린트, 테스트, 안티패턴) |
 | [스택 지침 양식](docs/guidelines/stack/_template.md) | 새 스택 지침 문서를 만들 때 쓰는 양식 |
 
 ## 3. 경계
@@ -41,7 +42,7 @@
 
 ## 4. 스택 미정 시 행동
 
-새 언어로 작업하기 전에 [스택 지침 안내](docs/guidelines/stack/README.md)의 절차를 따른다. 해당 언어의 스택 지침이 없으면 임의로 진행하지 않고, 사용자에게 [스택 지침 양식](docs/guidelines/stack/_template.md)으로 지침 생성을 먼저 제안한다.
+TypeScript (Nuxt.js) 외 새 언어로 작업해야 하는 경우 [스택 지침 안내](docs/guidelines/stack/README.md)의 절차를 따른다. 해당 언어의 스택 지침이 없으면 임의로 진행하지 않고, 사용자에게 [스택 지침 양식](docs/guidelines/stack/_template.md)으로 지침 생성을 먼저 제안한다.
 
 ## 5. 지침 갱신 지시
 
