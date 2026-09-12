@@ -69,6 +69,20 @@ export function serializeTrustChecklistResponse(response: PrismaTrustChecklistRe
   }
 }
 
+/** GET /api/reviews/mine 항목 — submissionId 포함, trustChecklistResponse는 제외. */
+export function serializeReviewMine(review: PrismaReview) {
+  return {
+    id: review.id,
+    submissionId: review.submissionId,
+    scoreRelevance: review.scoreRelevance,
+    scoreLogic: review.scoreLogic,
+    scoreSpecificity: review.scoreSpecificity,
+    scoreReadability: review.scoreReadability,
+    comment: review.comment,
+    submittedAt: review.submittedAt.toISOString()
+  }
+}
+
 export function serializeReview(
   review: PrismaReview,
   trustChecklistResponse?: PrismaTrustChecklistResponse | null
