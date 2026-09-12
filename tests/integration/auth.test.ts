@@ -1,17 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { setup, fetch, url } from '@nuxt/test-utils/e2e'
+import { setup } from '@nuxt/test-utils/e2e'
 import { prisma } from '../../server/utils/prisma'
-
-function json(path: string, options: { method?: string, body?: unknown, cookie?: string } = {}) {
-  return fetch(url(path), {
-    method: options.method ?? 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      ...(options.cookie ? { cookie: options.cookie } : {})
-    },
-    body: options.body ? JSON.stringify(options.body) : undefined
-  })
-}
+import { json } from '../helpers/http'
 
 describe('인증 API (docs/api-spec.md 인증 섹션)', async () => {
   await setup({ server: true })

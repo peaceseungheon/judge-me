@@ -1,4 +1,4 @@
-import type { User as PrismaUser } from '../../generated/prisma/client'
+import type { User as PrismaUser, Submission as PrismaSubmission, Review as PrismaReview, TrustChecklistResponse as PrismaTrustChecklistResponse } from '../../generated/prisma/client'
 import { jobMajorMap, jobMinorMap, experienceBandMap } from './enum-maps'
 
 export function serializeUserSummary(user: PrismaUser) {
@@ -17,5 +17,52 @@ export function serializeUserProfile(user: PrismaUser) {
     ...serializeUserSummary(user),
     trustScore: Number(user.trustScore),
     createdAt: user.createdAt.toISOString()
+  }
+}
+
+export function serializeSubmissionSummary(submission: PrismaSubmission) {
+  return {
+    id: submission.id,
+    title: submission.title,
+    jobMajor: jobMajorMap.fromPrisma(submission.jobMajor),
+    jobMinor: jobMinorMap.fromPrisma(submission.jobMinor),
+    experienceBand: experienceBandMap.fromPrisma(submission.experienceBand),
+    lane: submission.lane,
+    reviewerCount: submission.reviewerCount,
+    status: submission.status,
+    createdAt: submission.createdAt.toISOString()
+  }
+}
+
+export function serializeSubmissionDetail(submission: PrismaSubmission) {
+  return {
+    ...serializeSubmissionSummary(submission),
+    bodyText: submission.bodyText
+  }
+}
+
+export function serializeTrustChecklistResponse(response: PrismaTrustChecklistResponse) {
+  return {
+    usedSpecifics: response.usedSpecifics,
+    newPerspective: response.newPerspective,
+    actionableAlternatives: response.actionableAlternatives
+  }
+}
+
+export function serializeReview(
+  review: PrismaReview,
+  trustChecklistResponse?: PrismaTrustChecklistResponse | null
+) {
+  return {
+    id: review.id,
+    scoreRelevance: review.scoreRelevance,
+    scoreLogic: review.scoreLogic,
+    scoreSpecificity: review.scoreSpecificity,
+    scoreReadability: review.scoreReadability,
+    comment: review.comment,
+    submittedAt: review.submittedAt.toISOString(),
+    ...(trustChecklistResponse
+      ? { trustChecklistResponse: serializeTrustChecklistResponse(trustChecklistResponse) }
+      : {})
   }
 }
