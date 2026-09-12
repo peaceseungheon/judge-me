@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: judge_me
+      POSTGRES_PASSWORD: judge_me
+      POSTGRES_DB: judge_me
+    ports:
+      - "5433:5432"
+    volumes:
+      - judge_me_db:/var/lib/postgresql/data
+
+volumes:
+  judge_me_db:
