@@ -10,7 +10,7 @@ Nuxt.js(Vue 3) 기반 풀스택 웹 애플리케이션. 별도 백엔드 서버 
 
 - 런타임: Node.js 22 LTS (`.nvmrc`로 고정)
 - 패키지 매니저: npm (저장소 기본, `package-lock.json` 커밋)
-- 프레임워크: Nuxt 3 (최신 stable), Vue 3, TypeScript strict 모드
+- 프레임워크: Nuxt 4 (최신 stable), Vue 3, TypeScript strict 모드
 - ORM: Prisma — `docs/data-model.md`의 enum·제약을 TypeScript 타입과 마이그레이션으로 그대로 매핑할 수 있어 채택. CHECK 제약처럼 Prisma DSL이 표현하지 못하는 항목은 생성된 마이그레이션 SQL을 수정해 보완한다.
 - 인증: 세션 쿠키(HttpOnly, sealed cookie) — `nuxt-auth-utils` 사용. `docs/api-spec.md` Open Question #3(세션 쿠키 vs JWT)에 대한 구현 단계 결정이며, 모바일 앱이 없고 별도 API 소비자가 없는 현재 범위에서 JWT의 토큰 갱신·폐기 복잡도가 불필요하기 때문이다.
 
