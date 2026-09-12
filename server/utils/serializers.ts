@@ -1,4 +1,4 @@
-import type { User as PrismaUser, Submission as PrismaSubmission, Review as PrismaReview, TrustChecklistResponse as PrismaTrustChecklistResponse } from '../../generated/prisma/client'
+import type { User as PrismaUser, Submission as PrismaSubmission, QueueClaim as PrismaQueueClaim, Review as PrismaReview, TrustChecklistResponse as PrismaTrustChecklistResponse } from '../../generated/prisma/client'
 import { jobMajorMap, jobMinorMap, experienceBandMap } from './enum-maps'
 
 export function serializeUserSummary(user: PrismaUser) {
@@ -38,6 +38,26 @@ export function serializeSubmissionDetail(submission: PrismaSubmission) {
   return {
     ...serializeSubmissionSummary(submission),
     bodyText: submission.bodyText
+  }
+}
+
+/** POST /api/queue/claim 응답에 쓰는 축약형 — lane/reviewerCount/status/createdAt은 제외한다. */
+export function serializeClaimSubmission(submission: PrismaSubmission) {
+  return {
+    id: submission.id,
+    title: submission.title,
+    bodyText: submission.bodyText,
+    jobMajor: jobMajorMap.fromPrisma(submission.jobMajor),
+    jobMinor: jobMinorMap.fromPrisma(submission.jobMinor),
+    experienceBand: experienceBandMap.fromPrisma(submission.experienceBand)
+  }
+}
+
+export function serializeQueueClaim(claim: PrismaQueueClaim) {
+  return {
+    id: claim.id,
+    submissionId: claim.submissionId,
+    claimedAt: claim.claimedAt.toISOString()
   }
 }
 
