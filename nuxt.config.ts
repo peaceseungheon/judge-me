@@ -2,7 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', 'nuxt-auth-utils'],
+  modules: ['@nuxt/ui', '@nuxt/eslint', 'nuxt-auth-utils'],
+  colorMode: {
+    classSuffix: '',
+    preference: 'system',
+    fallback: 'light'
+  },
+  css: ['~/assets/css/main.css'],
   typescript: { strict: true, typeCheck: true },
   nitro: { errorHandler: '~~/server/error.ts' },
   runtimeConfig: {

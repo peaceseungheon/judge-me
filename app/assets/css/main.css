@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/*
+  디자인 토큰 — 재판정
+  컬러: 네이비(primary) + 누가봉 캐러멜(secondary/accent)
+  타이포: Inter/Noto Sans KR 계열
+  다크모드: .dark 클래스로 전환
+*/
+
+:root {
+  /* 네이비 계열: 라이트 모드에서 더 진한 파란색 사용 */
+  --ui-primary: var(--ui-color-blue-700);
+
+  /* 폰트 */
+  --font-sans: 'Inter', 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
+
+  /* 스페이싱 기본값은 Tailwind 4 기본 사용 */
+}
+
+.dark {
+  /* 다크 모드: 밝은 파란색으로 대비 확보 */
+  --ui-primary: var(--ui-color-blue-300);
+}
