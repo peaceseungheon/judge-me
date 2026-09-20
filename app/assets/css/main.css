@@ -3,13 +3,13 @@
 
 :root,
 .light {
-  --judge-brand: var(--ui-color-blue-700);
-  --judge-accent: var(--ui-color-amber-600);
-  --judge-canvas: var(--ui-color-slate-50);
+  --judge-brand: var(--ui-color-primary-700);
+  --judge-accent: var(--ui-color-secondary-600);
+  --judge-canvas: var(--ui-color-neutral-50);
   --judge-surface: #ffffff;
-  --judge-text: var(--ui-color-slate-950);
-  --judge-muted: var(--ui-color-slate-600);
-  --judge-border: var(--ui-color-slate-200);
+  --judge-text: var(--ui-color-neutral-950);
+  --judge-muted: var(--ui-color-neutral-600);
+  --judge-border: var(--ui-color-neutral-200);
   --font-sans: 'Inter', 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
   --ui-primary: var(--judge-brand);
   --ui-secondary: var(--judge-accent);
@@ -21,13 +21,13 @@
 }
 
 .dark {
-  --judge-brand: var(--ui-color-blue-300);
-  --judge-accent: var(--ui-color-amber-300);
-  --judge-canvas: var(--ui-color-slate-950);
-  --judge-surface: var(--ui-color-slate-900);
-  --judge-text: var(--ui-color-slate-50);
-  --judge-muted: var(--ui-color-slate-400);
-  --judge-border: var(--ui-color-slate-800);
+  --judge-brand: var(--ui-color-primary-300);
+  --judge-accent: var(--ui-color-secondary-300);
+  --judge-canvas: var(--ui-color-neutral-950);
+  --judge-surface: var(--ui-color-neutral-900);
+  --judge-text: var(--ui-color-neutral-50);
+  --judge-muted: var(--ui-color-neutral-400);
+  --judge-border: var(--ui-color-neutral-800);
   --ui-primary: var(--judge-brand);
   --ui-secondary: var(--judge-accent);
   --ui-bg: var(--judge-surface);

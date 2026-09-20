@@ -1,7 +1,7 @@
 <template>
   <UContainer class="max-w-2xl py-10">
     <h1 class="text-2xl font-bold">평가하기</h1>
-    <p class="mt-1 text-sm text-neutral-500">평가를 완료하면 크레딧 1점이 적립됩니다.</p>
+    <p class="mt-1 text-sm text-muted">평가를 완료하면 크레딧 1점이 적립됩니다.</p>
 
     <!-- 로딩 -->
     <USkeleton v-if="claimPending" class="mt-6 h-48 w-full rounded-lg" />
@@ -16,8 +16,8 @@
         class="mt-6"
       />
       <div v-else class="mt-8 text-center">
-        <UIcon name="i-heroicons-document-text" class="mx-auto mb-3 size-12 text-neutral-300" />
-        <p class="text-sm text-neutral-500">평가할 자소서를 가져옵니다.</p>
+        <UIcon name="i-heroicons-document-text" class="mx-auto mb-3 size-12 text-dimmed" />
+        <p class="text-sm text-muted">평가할 자소서를 가져옵니다.</p>
         <UButton class="mt-4" color="primary" variant="solid" :loading="claiming" @click="claimNext">
           평가 시작
         </UButton>
@@ -31,7 +31,7 @@
           <div class="flex items-start justify-between">
             <div>
               <h2 class="text-lg font-semibold">{{ submission?.title }}</h2>
-              <p class="mt-0.5 text-sm text-neutral-500">
+              <p class="mt-0.5 text-sm text-muted">
                 {{ submission?.jobMajor }} · {{ submission?.jobMinor }} · {{ submission?.experienceBand }}
               </p>
             </div>
@@ -69,7 +69,7 @@
 
           <UFormField label="코멘트 (50자 이상)" name="comment">
             <UTextarea v-model="review.comment" :rows="5" placeholder="구체적인 피드백을 작성해 주세요." required class="w-full" />
-            <p :class="['mt-1 text-sm', review.comment.length < 50 ? 'text-error' : 'text-neutral-400']">
+            <p :class="['mt-1 text-sm', review.comment.length < 50 ? 'text-error' : 'text-dimmed']">
               {{ review.comment.length }} / 50자
             </p>
           </UFormField>

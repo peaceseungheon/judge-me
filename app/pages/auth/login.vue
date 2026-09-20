@@ -26,7 +26,7 @@
       </form>
 
       <template #footer>
-        <p class="text-center text-sm text-neutral-500">
+        <p class="text-center text-sm text-muted">
           계정이 없으신가요?
           <NuxtLink to="/auth/signup" class="text-primary hover:underline">가입하기</NuxtLink>
         </p>

@@ -1,7 +1,7 @@
 <template>
   <UContainer class="max-w-2xl py-10">
     <h1 class="text-2xl font-bold">자소서 등록</h1>
-    <p class="mt-1 text-sm text-neutral-500">크레딧 3점이 차감되며 평가자를 매칭합니다.</p>
+    <p class="mt-1 text-sm text-muted">크레딧 3점이 차감되며 평가자를 매칭합니다.</p>
 
     <UAlert
       v-if="errorMsg"

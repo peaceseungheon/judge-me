@@ -43,7 +43,7 @@
       </form>
 
       <template #footer>
-        <p class="text-center text-sm text-neutral-500">
+        <p class="text-center text-sm text-muted">
           이미 계정이 있으신가요?
           <NuxtLink to="/auth/login" class="text-primary hover:underline">로그인</NuxtLink>
         </p>

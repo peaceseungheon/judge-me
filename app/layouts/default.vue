@@ -1,17 +1,17 @@
 <template>
-  <div class="min-h-screen bg-white dark:bg-neutral-950">
-    <header class="border-b border-neutral-200 dark:border-neutral-800">
+  <div class="min-h-screen">
+    <header class="border-b border-default">
       <UContainer class="flex h-14 items-center justify-between">
         <NuxtLink to="/" class="text-lg font-bold text-primary">재판정</NuxtLink>
         <nav class="flex items-center gap-4">
           <template v-if="loggedIn">
-            <NuxtLink to="/submissions/new" class="text-sm text-neutral-600 hover:text-primary dark:text-neutral-400">
+            <NuxtLink to="/submissions/new" class="text-sm text-muted hover:text-primary">
               자소서 등록
             </NuxtLink>
-            <NuxtLink to="/queue" class="text-sm text-neutral-600 hover:text-primary dark:text-neutral-400">
+            <NuxtLink to="/queue" class="text-sm text-muted hover:text-primary">
               평가하기
             </NuxtLink>
-            <NuxtLink to="/me" class="text-sm text-neutral-600 hover:text-primary dark:text-neutral-400">
+            <NuxtLink to="/me" class="text-sm text-muted hover:text-primary">
               마이페이지
             </NuxtLink>
             <UButton color="neutral" variant="outline" size="sm" :loading="loggingOut" @click="logout">
