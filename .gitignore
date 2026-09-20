@@ -25,3 +25,12 @@ logs
 
 # Generated Prisma client
 /generated/
+
+# Ouroboros / OMC local tool state
+.omc
+.omo
+.ouroboros
+CLAUDE.md.bak
+
+# Playwright
+test-results

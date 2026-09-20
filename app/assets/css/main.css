@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root,
+.light {
+  --judge-brand: var(--ui-color-primary-700);
+  --judge-accent: var(--ui-color-secondary-600);
+  --judge-canvas: var(--ui-color-neutral-50);
+  --judge-surface: #ffffff;
+  --judge-text: var(--ui-color-neutral-950);
+  --judge-muted: var(--ui-color-neutral-600);
+  --judge-border: var(--ui-color-neutral-200);
+  --font-sans: 'Inter', 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
+  --ui-primary: var(--judge-brand);
+  --ui-secondary: var(--judge-accent);
+  --ui-bg: var(--judge-surface);
+  --ui-bg-muted: var(--judge-canvas);
+  --ui-text: var(--judge-text);
+  --ui-text-muted: var(--judge-muted);
+  --ui-border: var(--judge-border);
+}
+
+.dark {
+  --judge-brand: var(--ui-color-primary-300);
+  --judge-accent: var(--ui-color-secondary-300);
+  --judge-canvas: var(--ui-color-neutral-950);
+  --judge-surface: var(--ui-color-neutral-900);
+  --judge-text: var(--ui-color-neutral-50);
+  --judge-muted: var(--ui-color-neutral-400);
+  --judge-border: var(--ui-color-neutral-800);
+  --ui-primary: var(--judge-brand);
+  --ui-secondary: var(--judge-accent);
+  --ui-bg: var(--judge-surface);
+  --ui-bg-muted: var(--judge-canvas);
+  --ui-text: var(--judge-text);
+  --ui-text-muted: var(--judge-muted);
+  --ui-border: var(--judge-border);
+}
+
+@layer base {
+  html {
+    background: var(--judge-canvas);
+    color: var(--judge-text);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--judge-canvas);
+  }
+}
