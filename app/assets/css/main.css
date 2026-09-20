@@ -1,24 +1,51 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-/*
-  디자인 토큰 — 재판정
-  컬러: 네이비(primary) + 누가봉 캐러멜(secondary/accent)
-  타이포: Inter/Noto Sans KR 계열
-  다크모드: .dark 클래스로 전환
-*/
-
-:root {
-  /* 네이비 계열: 라이트 모드에서 더 진한 파란색 사용 */
-  --ui-primary: var(--ui-color-blue-700);
-
-  /* 폰트 */
+:root,
+.light {
+  --judge-brand: var(--ui-color-blue-700);
+  --judge-accent: var(--ui-color-amber-600);
+  --judge-canvas: var(--ui-color-slate-50);
+  --judge-surface: #ffffff;
+  --judge-text: var(--ui-color-slate-950);
+  --judge-muted: var(--ui-color-slate-600);
+  --judge-border: var(--ui-color-slate-200);
   --font-sans: 'Inter', 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
-
-  /* 스페이싱 기본값은 Tailwind 4 기본 사용 */
+  --ui-primary: var(--judge-brand);
+  --ui-secondary: var(--judge-accent);
+  --ui-bg: var(--judge-surface);
+  --ui-bg-muted: var(--judge-canvas);
+  --ui-text: var(--judge-text);
+  --ui-text-muted: var(--judge-muted);
+  --ui-border: var(--judge-border);
 }
 
 .dark {
-  /* 다크 모드: 밝은 파란색으로 대비 확보 */
-  --ui-primary: var(--ui-color-blue-300);
+  --judge-brand: var(--ui-color-blue-300);
+  --judge-accent: var(--ui-color-amber-300);
+  --judge-canvas: var(--ui-color-slate-950);
+  --judge-surface: var(--ui-color-slate-900);
+  --judge-text: var(--ui-color-slate-50);
+  --judge-muted: var(--ui-color-slate-400);
+  --judge-border: var(--ui-color-slate-800);
+  --ui-primary: var(--judge-brand);
+  --ui-secondary: var(--judge-accent);
+  --ui-bg: var(--judge-surface);
+  --ui-bg-muted: var(--judge-canvas);
+  --ui-text: var(--judge-text);
+  --ui-text-muted: var(--judge-muted);
+  --ui-border: var(--judge-border);
+}
+
+@layer base {
+  html {
+    background: var(--judge-canvas);
+    color: var(--judge-text);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--judge-canvas);
+  }
 }
