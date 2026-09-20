@@ -54,16 +54,16 @@
         <form class="mt-4 space-y-4" @submit.prevent="submitReview">
           <div class="grid grid-cols-2 gap-4">
             <UFormField label="직무 적합성 (1~5)" name="scoreRelevance">
-              <USelect v-model.number="review.scoreRelevance" :options="SCORE_OPTIONS" required class="w-full" />
+              <USelect v-model.number="review.scoreRelevance" aria-label="직무 적합성 점수" :items="SCORE_OPTIONS" required class="w-full" />
             </UFormField>
             <UFormField label="논리 구조 (1~5)" name="scoreLogic">
-              <USelect v-model.number="review.scoreLogic" :options="SCORE_OPTIONS" required class="w-full" />
+              <USelect v-model.number="review.scoreLogic" aria-label="논리 구조 점수" :items="SCORE_OPTIONS" required class="w-full" />
             </UFormField>
             <UFormField label="구체성 (1~5)" name="scoreSpecificity">
-              <USelect v-model.number="review.scoreSpecificity" :options="SCORE_OPTIONS" required class="w-full" />
+              <USelect v-model.number="review.scoreSpecificity" aria-label="구체성 점수" :items="SCORE_OPTIONS" required class="w-full" />
             </UFormField>
             <UFormField label="가독성 (1~5)" name="scoreReadability">
-              <USelect v-model.number="review.scoreReadability" :options="SCORE_OPTIONS" required class="w-full" />
+              <USelect v-model.number="review.scoreReadability" aria-label="가독성 점수" :items="SCORE_OPTIONS" required class="w-full" />
             </UFormField>
           </div>
 

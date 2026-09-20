@@ -27,12 +27,13 @@
 
       <div class="flex gap-3">
         <UFormField label="직군 대분류" name="jobMajor" class="flex-1">
-          <USelect v-model="form.jobMajor" :options="JOB_MAJORS" placeholder="선택" required class="w-full" @change="form.jobMinor = ''" />
+          <USelect v-model="form.jobMajor" aria-label="직군 대분류" :items="JOB_MAJORS" placeholder="선택" required class="w-full" @update:model-value="form.jobMinor = ''" />
         </UFormField>
         <UFormField label="직군 소분류" name="jobMinor" class="flex-1">
           <USelect
             v-model="form.jobMinor"
-            :options="jobMinors"
+            aria-label="직군 소분류"
+            :items="jobMinors"
             :disabled="!form.jobMajor"
             placeholder="대분류 선택 후"
             required
@@ -40,7 +41,7 @@
           />
         </UFormField>
         <UFormField label="경력" name="experienceBand" class="flex-1">
-          <USelect v-model="form.experienceBand" :options="EXPERIENCE_BANDS" placeholder="선택" required class="w-full" />
+          <USelect v-model="form.experienceBand" aria-label="경력" :items="EXPERIENCE_BANDS" placeholder="선택" required class="w-full" />
         </UFormField>
       </div>
 

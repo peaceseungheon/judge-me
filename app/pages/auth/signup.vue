@@ -21,12 +21,13 @@
           <UInput v-model="form.password" type="password" placeholder="8자 이상" required class="w-full" />
         </UFormField>
         <UFormField label="직군 대분류" name="jobMajor">
-          <USelect v-model="form.jobMajor" :options="JOB_MAJORS" placeholder="선택" required class="w-full" @change="form.jobMinor = ''" />
+          <USelect v-model="form.jobMajor" aria-label="직군 대분류" :items="JOB_MAJORS" placeholder="선택" required class="w-full" @update:model-value="form.jobMinor = ''" />
         </UFormField>
         <UFormField label="직군 소분류" name="jobMinor">
           <USelect
             v-model="form.jobMinor"
-            :options="jobMinors"
+            aria-label="직군 소분류"
+            :items="jobMinors"
             :disabled="!form.jobMajor"
             placeholder="대분류를 먼저 선택하세요"
             required
@@ -34,7 +35,7 @@
           />
         </UFormField>
         <UFormField label="경력" name="experienceBand">
-          <USelect v-model="form.experienceBand" :options="EXPERIENCE_BANDS" placeholder="선택" required class="w-full" />
+          <USelect v-model="form.experienceBand" aria-label="경력" :items="EXPERIENCE_BANDS" placeholder="선택" required class="w-full" />
         </UFormField>
         <UButton type="submit" color="primary" variant="solid" class="w-full" :loading="pending">
           가입하기
