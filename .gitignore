@@ -28,6 +28,7 @@ logs
 
 # Ouroboros / OMC local tool state
 .omc
+.omo
 .ouroboros
 CLAUDE.md.bak
 
